@@ -11,7 +11,7 @@ namespace PaginasBinding
         {
             InitializeComponent();
 
-            MainPage = new BindingClassView();
+            MainPage = new PersonaView();
         }
 
         protected override void OnStart()

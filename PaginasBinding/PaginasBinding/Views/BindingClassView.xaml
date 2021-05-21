@@ -1,9 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PaginasBinding.Views.BindingClassView">
+             x:Class="PaginasBinding.Views.BindingClassView"
+             xmlns:models="clr-namespace:PaginasBinding.Models">
     <ContentPage.Content>
         <StackLayout>
+            <StackLayout.BindingContext>
+                <models:Coche
+                     Marca="Bugatti" Modelo="Carrazo"
+                    Imagen="https://periodismodelmotor.com/wp-content/uploads/2020/02/coches-caros-de-mantener-9.jpg"/>
+            </StackLayout.BindingContext>
             <Label Text="{Binding Marca}"
                    FontSize="Large"
                    TextColor="Blue"/>
