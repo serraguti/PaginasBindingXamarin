@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PaginasBinding.Views.ListaNumerosColoresView"
+             xmlns:models="clr-namespace:PaginasBinding.Models">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Numeros}">
+                <ListView.BindingContext>
+                    <models:ListaNumeros/>
+                </ListView.BindingContext>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -11,7 +11,7 @@ namespace PaginasBinding
         {
             InitializeComponent();
 
-            MainPage = new TablaMultiplicarView();
+            MainPage = new ListaNumerosColoresView();
         }
 
         protected override void OnStart()
