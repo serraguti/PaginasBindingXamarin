@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PaginasBinding.Views.TemperaturaView"
+             xmlns:converters="clr-namespace:PaginasBinding.Converters">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ConverterGrados x:Key="convertergrados"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Converters" FontSize="30"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Grados Celsius"
+                   VerticalOptions="Start"
+                   HorizontalOptions="FillAndExpand"/>
+            <Entry HorizontalOptions="FillAndExpand"
+                   FontSize="30" VerticalOptions="StartAndExpand"
+                   x:Name="cajacelsius"/>
+            <Label Text="Grados Farenhait"
+                   VerticalOptions="Start"
+                   HorizontalOptions="FillAndExpand"/>
+            <Entry FontSize="30" TextColor="Blue"
+                   VerticalOptions="StartAndExpand"
+                   HorizontalOptions="FillAndExpand"
+                   BindingContext="{x:Reference cajacelsius}"
+                   Text="{Binding Path=Text
+                , Mode=OneWay, Converter={StaticResource convertergrados}}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

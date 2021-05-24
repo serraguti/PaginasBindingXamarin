@@ -11,7 +11,7 @@ namespace PaginasBinding
         {
             InitializeComponent();
 
-            MainPage = new PersonaView();
+            MainPage = new TablaMultiplicarView();
         }
 
         protected override void OnStart()
