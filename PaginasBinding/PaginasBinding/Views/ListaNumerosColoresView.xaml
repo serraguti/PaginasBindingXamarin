@@ -2,13 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PaginasBinding.Views.ListaNumerosColoresView"
-             xmlns:models="clr-namespace:PaginasBinding.Models">
+             xmlns:models="clr-namespace:PaginasBinding.Models"
+             xmlns:converters="clr-namespace:PaginasBinding.Converters">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ConverterNumeros x:Key="converternumeros"
+  ColorNegativo="Red" ColorPositivo="GreenYellow"/>
+            <converters:ConverterImages x:Key="converterimages"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <ListView ItemsSource="{Binding Numeros}">
                 <ListView.BindingContext>
                     <models:ListaNumeros/>
                 </ListView.BindingContext>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Valor}"
+                                   FontSize="40"
+TextColor="{Binding Valor
+, Converter={StaticResource converternumeros}}"/>
+<Image Source="{Binding Valor
+    , Converter={StaticResource converterimages}}"
+       WidthRequest="50" HeightRequest="50"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
     </ContentPage.Content>
