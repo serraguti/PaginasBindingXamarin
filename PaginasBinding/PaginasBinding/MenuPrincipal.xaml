@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PaginasBinding.MenuPrincipal">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu Xamarin"
+                     BackgroundColor="Coral">
+            <StackLayout Orientation="Vertical">
+                <StackLayout BackgroundColor="AliceBlue"
+                             HeightRequest="75">
+                    <Label FontSize="40"
+                           Text="Menu Principal"
+                           TextColor="White"
+                           BackgroundColor="Blue"/>
+                </StackLayout>
+                <ListView x:Name="lisviewMenu"
+                          RowHeight="60"
+                          SeparatorVisibility="Default"
+                          BackgroundColor="LightGreen">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Spacing="20">
+                                    <Label Text="{Binding Titulo}"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"
+                                           FontSize="Medium"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+                         
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage></NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

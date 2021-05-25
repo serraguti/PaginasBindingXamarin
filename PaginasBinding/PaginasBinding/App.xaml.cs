@@ -11,7 +11,7 @@ namespace PaginasBinding
         {
             InitializeComponent();
 
-            MainPage = new ListaNumerosColoresView();
+            MainPage = new MenuPrincipal();
         }
 
         protected override void OnStart()
